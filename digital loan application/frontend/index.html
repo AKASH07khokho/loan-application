@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Digital Loan Application</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+
+    <style>
+      /* ----------- Global Layout ----------- */
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: #333;
+        background: linear-gradient(135deg, #d0e0b1ff 0%, #f1f5f9 100%);
+        animation: fadeIn 0.8s ease-in;
+        position: relative;
+        min-height: 100vh;
+        overflow-x: hidden;
+      }
+
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+
+      /* ----------- Decorative Background ----------- */
+      .bg-pattern {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 200%;
+        height: 200%;
+        background-image: radial-gradient(#cbd5e1 1px, transparent 1px);
+        background-size: 30px 30px;
+        opacity: 0.2;
+        z-index: -1;
+        animation: floatPattern 60s linear infinite;
+      }
+
+      @keyframes floatPattern {
+        0%   { transform: translate(0, 0); }
+        50%  { transform: translate(-100px, -100px); }
+        100% { transform: translate(0, 0); }
+      }
+
+      h1, h2, h3 {
+        color: #1e3a8a;
+        text-align: center;
+        letter-spacing: 0.5px;
+      }
+
+      /* ----------- Navbar ----------- */
+      nav {
+        background: #1e8a76ff;
+        padding: 15px 20px;
+        text-align: center;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      }
+
+      nav a {
+        position: relative;
+        color: #ffffff;
+        margin: 0 15px;
+        text-decoration: none;
+        font-weight: 500;
+        padding-bottom: 4px;
+      }
+
+      nav a::after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background: #ffd700;
+        transition: width 0.3s ease-in-out;
+      }
+
+      nav a:hover::after {
+        width: 100%;
+      }
+
+      /* ----------- Form Containers ----------- */
+      form {
+        background: #ffffff;
+        padding: 30px;
+        border-radius: 16px;
+        max-width: 420px;
+        margin: 60px auto;
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+        transition: transform 0.2s;
+        position: relative;
+        z-index: 1;
+      }
+
+      form:hover {
+        transform: translateY(-4px);
+      }
+
+      input {
+        padding: 12px;
+        border: 1px solid #d1d5db;
+        border-radius: 8px;
+        font-size: 15px;
+        transition: border-color 0.2s, box-shadow 0.2s;
+      }
+
+      input:focus {
+        border-color: #1e3a8a;
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(30,58,138,0.2);
+      }
+
+      button {
+        background: linear-gradient(90deg, #1e3a8a, #2563eb);
+        color: #ffffff;
+        border: none;
+        padding: 14px;
+        border-radius: 8px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: transform 0.2s, background 0.2s;
+      }
+
+      button:hover {
+        transform: scale(1.03);
+        background: linear-gradient(90deg, #2563eb, #1e3a8a);
+      }
+
+      /* ----------- Dashboard & Messages ----------- */
+      .container {
+        max-width: 800px;
+        margin: 30px auto;
+        padding: 25px;
+        background: #ffffff;
+        border-radius: 16px;
+        box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+      }
+
+      .msg {
+        text-align: center;
+        margin-top: 15px;
+        color: #16a34a;
+        font-weight: 500;
+      }
+
+      .error {
+        color: #dc2626;
+        text-align: center;
+        margin-top: 10px;
+      }
+
+      /* ----------- Header & Footer ----------- */
+      header {
+        padding: 30px 20px;
+        background: linear-gradient(90deg, #1e3a8a, #1e8a76ff);
+        color: white;
+        text-align: center;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        position: relative;
+        z-index: 1;
+      }
+
+      footer {
+        padding: 15px;
+        text-align: center;
+        background: #f1f5f9;
+        color: #64748b;
+        font-size: 14px;
+        margin-top: 60px;
+        border-top: 1px solid #e2e8f0;
+        position: relative;
+        z-index: 1;
+      }
+
+      /* ----------- Responsive ----------- */
+      @media (max-width: 600px) {
+        form {
+          margin: 20px;
+          padding: 20px;
+        }
+
+        nav a {
+          display: inline-block;
+          margin: 8px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="bg-pattern"></div>
+
+
+    <div id="root"></div>
+
+    <footer>
+      <p>© 2025 Digital Loan Application — All Rights Reserved</p>
+    </footer>
+
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

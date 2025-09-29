@@ -1,0 +1,3 @@
+-- database: ./digital_loan_application.db
+
+SELECT * FROM loan_applications;

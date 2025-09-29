@@ -1,0 +1,7 @@
+{
+    "python.analysis.extraPaths": [
+        "./digital loan application/backend",
+        "./digital loan application/backend/db_",
+        "./digital loan application/backend/db_"
+    ]
+}

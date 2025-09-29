@@ -1,0 +1,7 @@
+-- database: ./digital_loan_application.db
+
+SELECT * FROM login;
+SELECT u.id, u.name, l.email
+FROM users u
+JOIN login l ON u.id = l.user_id
+WHERE l.email = ? AND l.password = ?
