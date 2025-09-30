@@ -33,10 +33,10 @@ def init_db():
     conn.close()
 
 init_db()
+
 @app.route('/')
 def home():
     return "Digital Loan Application Backend is running."
-
 
 @app.route('/register', methods=['POST'])
 def register():
@@ -60,7 +60,6 @@ def register():
     finally:
         conn.close()
 
-
 @app.route('/login', methods=['POST'])
 def login():
     data = request.get_json()
@@ -80,7 +79,6 @@ def login():
         return jsonify({"error": "Invalid email or password"}), 400
 
     return jsonify({"user_id": user[0], "name": user[1]})
-
 
 @app.route('/loan_applications', methods=['POST'])
 def apply_loan():
@@ -106,5 +104,6 @@ def apply_loan():
 
     return jsonify({"message": "Loan application submitted successfully"})
 
+# Updated for Render deployment
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=5000, debug=True)
